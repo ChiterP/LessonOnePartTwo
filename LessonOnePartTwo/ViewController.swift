@@ -35,49 +35,26 @@ class ViewController: UIViewController {
     }
 
 
+    var currentColor = ""
+    
     @IBAction func startButtonClick() {
         startButton.setTitle("NEXT", for: .normal)
         
-        var redOnSwitch = false
-        var yellowOnSwitch = false
-//        var greenOnSwitch = false
-        
-        if redColorView.alpha != 1 {
+        if currentColor == "" {
             redColorView.alpha = 1
-            redOnSwitch = true
-            print (redOnSwitch)
-        } else {
+            currentColor = "Red"
+        } else if currentColor == "Red" {
             redColorView.alpha = 0.3
-            redOnSwitch = false
-            print (redOnSwitch)
-        }
-        
-        if yellowColorView.alpha != 1 && redOnSwitch == false {
             yellowColorView.alpha = 1
-            yellowOnSwitch = true
-            print (yellowOnSwitch)
-        } else {
+            currentColor = "Yellow"
+        } else if currentColor == "Yellow" {
             yellowColorView.alpha = 0.3
-            yellowOnSwitch = false
-            print (yellowOnSwitch)
+            currentColor = "Green"
+            greenColorView.alpha = 1
+        } else if currentColor == "Green" {
+            greenColorView.alpha = 0.3
+            currentColor = ""
         }
-        
-//        if greenColorView.alpha != 1 && yellowOnSwitch == false && greenOnSwitch == false {
-//            greenColorView.alpha = 1
-//            greenOnSwitch = true
-//            print (greenOnSwitch)
-//        } else {
-//            greenColorView.alpha = 0.3
-//            greenOnSwitch = false
-//            print (greenOnSwitch)
-//        }
- 
-        
-        
-        
-        
     }
-    
-    
 }
 
